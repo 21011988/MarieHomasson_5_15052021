@@ -1,0 +1,38 @@
+/**
+ * /* footer
+ *
+ * @format
+ */
+
+.footer {
+  background-color: black;
+  height: 150px;
+  &__container {
+    padding: 20px;
+
+    &__ligne {
+      display: flex;
+      align-items: center;
+      width: 200px;
+      margin-bottom: 8px;
+
+      &__icone {
+        width: 30px;
+        margin-right: 10px;
+        display: flex;
+        justify-content: center;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      p {
+        color: white;
+      }
+
+      i {
+        color: white;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+/**
+ * /* header
+ *
+ * @format
+ */
+
+.header {
+  display: flex;
+  flex-direction: column;
+
+  &__logo {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__navbar {
+    background-color: $violet;
+    height: 60px;
+    ul {
+      display: flex;
+      flex-direction: row;
+      padding: 10px 5px 10px 5px;
+      list-style-type: none;
+      margin: 0px;
+      justify-content: center;
+
+      li {
+        width: 200px;
+        margin-right: 20px;
+        display: flex;
+        justify-content: center;
+        a {
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  }
+}

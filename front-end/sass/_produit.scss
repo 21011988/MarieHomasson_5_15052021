@@ -1,0 +1,41 @@
+/** @format */
+
+.mainproduit {
+  padding: 20px;
+
+  &__texte {
+    padding-bottom: 20px;
+    text-align: center;
+  }
+
+  &__boutoncmd {
+    padding-top: 20px;
+    text-align: center;
+    & :hover {
+      cursor: pointer;
+      color: black;
+      background-color: $violet;
+    }
+
+    button {
+      color: $violet;
+      background: black;
+      border-color: black;
+      height: 40px;
+      border-radius: 20px;
+      width: 150px;
+    }
+  }
+}
+
+.produit {
+  &__colors {
+    text-align: center;
+  }
+}
+
+#choix {
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+}
