@@ -1,5 +1,6 @@
 /** @format */
 
+// récupération de l'api des teddies
 fetch("http://localhost:3000/api/teddies")
   .then((reponse) => {
     if (reponse.ok) {
@@ -15,6 +16,7 @@ fetch("http://localhost:3000/api/teddies")
     console.log(error.message);
   });
 
+// affichage des produits disponibles teddies
 function affichageArticles(datas) {
   const elementDom = document.getElementById("articles");
 
@@ -27,7 +29,7 @@ function affichageArticles(datas) {
     <img src="${data.imageUrl}" alt="${data.name}"/>
     </div>
     <div class="produit__name">${data.name}</div>
-    <div class="produit__price">€${data.price}</div>
+    <div class="produit__price">€${data.price / 100}</div>
     </a>
     </div>
     `;
