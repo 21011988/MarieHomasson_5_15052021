@@ -45,11 +45,58 @@
         <p>Récapitulatif de votre panier</p>
         <br />
       </div>
-    </main>
 
-    <div class="mainpanier__boutoncmd">
-      <button type="submit">Valider la commande</button>
-    </div>
+      <div id="monpanier">
+        <div class="menu">
+          <p class="nomduproduit">Nom du produit</p>
+          <p class="quantité">Quantité</p>
+          <p class="prix">Prix</p>
+          <button id="boutonsupprimer" type="submit">Supprimer</button>
+        </div>
+
+        <div id="listeproduits"></div>
+
+        <div class="recapitulatifpanier">
+          <div id="montanttotal">Montant Total</div>
+          <div class="viderpanier">
+            <button id="boutonvider" type="submit">Vider panier</button>
+          </div>
+        </div>
+
+        <form
+          class="formulaire"
+          form="http://localhost:3000/api/teddies"
+          method="POST"
+        >
+          <div>
+            <label for="firstname">First Name :</label>
+            <input type="text" id="firstname" name="firstName" />
+          </div>
+          <div>
+            <label for="lastname">Last Name :</label>
+            <input type="text" id="lastname" name="lastName" />
+          </div>
+          <div>
+            <label for="address">Address :</label>
+            <input type="text" id="address" name="address" />
+          </div>
+          <div>
+            <label for="city">City :</label>
+            <input type="text" id="city" name="city" />
+          </div>
+          <div>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="user_Email" />
+          </div>
+
+          <div class="mainpanier__boutoncmd">
+            <button id="boutonvalider" type="submit">
+              Valider la commande
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
 
     <footer class="footer">
       <div class="footer__container">
