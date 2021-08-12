@@ -46,9 +46,9 @@ else {
   const bouton = document.getElementById("boutonsupprimer");
   bouton.addEventListener("click", function () {
     if (confirm("Etes-vous sûr de vouloir supprimer cet article ?")) {
-      // Code à éxécuter si le l'utilisateur clique sur "OK"
+      // Suppression article
     } else {
-      // Code à éxécuter si l'utilisateur clique sur "Annuler"
+      // Article reste dans panier
     }
   });
 
@@ -56,38 +56,14 @@ else {
   const bouton2 = document.getElementById("boutonvider");
   bouton2.addEventListener("click", function () {
     if (confirm("Etes-vous sûr de vouloir vider entièrement votre panier?")) {
-      // Code à éxécuter si le l'utilisateur clique sur "OK"
+      // Tous les produits sont supprimés > message que le panier est vide 
     } else {
-      // Code à éxécuter si l'utilisateur clique sur "Annuler"
+      // Tous les produits restent dans panier 
     }
   });
 }
 
-function sendData(data) {
-  var XHR = new XMLHttpRequest();
-  var FD = new FormData();
 
-  // Mettez les données dans l'objet FormData
-  for (name in data) {
-    FD.append(name, data[name]);
-  }
-
-  // Définissez ce qui se passe si la soumission s'est opérée avec succès
-  XHR.addEventListener("load", function (event) {
-    alert("Ouais ! Données envoyées et réponse chargée.");
-  });
-
-  // Definissez ce qui se passe en cas d'erreur
-  XHR.addEventListener("error", function (event) {
-    alert("Oups! Quelque chose s'est mal passé.");
-  });
-
-  // Configurez la requête
-  XHR.open("POST", "http://127.0.0.1:5500/front-end/confirmation.html");
-
-  // Expédiez l'objet FormData ; les en-têtes HTTP sont automatiquement définies
-  XHR.send(FD);
-}
 
 //sinon
 //Afficher panier (et calculer en meme temps) (prévoir bouton supprimé pour chaque ligne)
