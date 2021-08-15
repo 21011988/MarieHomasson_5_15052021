@@ -7,11 +7,9 @@ fetch("http://localhost:3000/api/teddies")
       return reponse.json();
     }
   })
-
   .then((datas) => {
     affichageArticles(datas);
   })
-
   .catch((error) => {
     console.log(error.message);
   });
@@ -32,6 +30,7 @@ function affichageArticles(datas) {
     <div class="produit__price">€${data.price / 100}</div>
     </a>
     </div>
+
     `;
   }
 }

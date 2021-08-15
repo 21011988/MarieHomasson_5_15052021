@@ -42,21 +42,23 @@ function affichageElements(datas) {
     <option value="">--Merci de choisir une option--</option>
     ${datas.colors.map(
       (option) => `<option value = "${option}"> ${option} </option> `
-    )}
+  )}
   </select>
   </div>
   `;
+  console.log(option);
 
   let optionsProduit = {
     name: datas.name,
     id_ProduitSelectionner: datas._id,
     prix: datas.price / 100,
   };
-
+  
   //gestion au clik sur bouton ajouter au panier
-
+  
   const bouton = document.getElementById("boutonajouter");
   bouton.addEventListener("click", function () {
+    
     // récupérer le panier en storage
     let produitEnregistreDansLocalStorage = JSON.parse(
       localStorage.getItem("panier")
@@ -65,11 +67,8 @@ function affichageElements(datas) {
 
     //si le panier existe déjà
     if (produitEnregistreDansLocalStorage) {
-      console.log("panier existe deja");
-
       produitEnregistreDansLocalStorage.push(optionsProduit); //si j'ajoute un autre article
       alert("Votre produit est bien ajouté au panier"); // message alerte pour confirmer l'ajout au panier
-
       localStorage.setItem(
         "panier",
         JSON.stringify(produitEnregistreDansLocalStorage)
@@ -79,11 +78,8 @@ function affichageElements(datas) {
     //si le panier est nul
     else {
       produitEnregistreDansLocalStorage = []; //création tableau objet
-      console.log("panier n'existe pas");
-
       produitEnregistreDansLocalStorage.push(optionsProduit); //si j'ajoute un article
       alert("Votre produit est bien ajouté au panier"); // message alerte pour confirmer l'ajout au panier
-
       localStorage.setItem(
         "panier",
         JSON.stringify(produitEnregistreDansLocalStorage)

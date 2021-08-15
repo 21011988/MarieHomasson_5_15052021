@@ -4,14 +4,12 @@
 let produitEnregistreDansLocalStorage = JSON.parse(
   localStorage.getItem("panier")
 );
-console.log(produitEnregistreDansLocalStorage);
 
-const elementsDansPanier = document.getElementById("listeproduits");
+const elementsDansPanier = document.getElementById("listeproduits"); //produits ajoutés dans le panier
+const recapPanier = document.getElementById("total"); //montant total du panier
 
 // si le panier est vide => mettre un message
 if (produitEnregistreDansLocalStorage === null) {
-  console.log("je suis vide");
-
   const panierVide = `
     <div class="paniervide">
       <div> Votre panier est vide ! </div>
@@ -21,34 +19,52 @@ if (produitEnregistreDansLocalStorage === null) {
 }
 //si le panier n'est pas vide => affichage des produits
 else {
-  console.log("je ne suis pas vide");
+  let nomProduit;
+  let prixProduit;
+  let montantTotal = 0;
 
-  let titre;
+  //récupration et affichage des informations produits par création
+  for (let i = 0; i < produitEnregistreDansLocalStorage.length; i++) {
+    console.log(produitEnregistreDansLocalStorage);
 
-  let prixTotal = 0;
+    //nom du produit
+    const nom = document.getElementById("nomproduit");
+    nomProduit = document.createElement("p");
+    nomProduit.textContent = produitEnregistreDansLocalStorage[i].name;
+    nom.appendChild(nomProduit);
+  
+    //prix du produit
+    const prix = document.getElementById("prixproduit");
+    prixProduit = document.createElement("p");
+    prixProduit.textContent = produitEnregistreDansLocalStorage[i].prix;
+    prix.appendChild(prixProduit);
+   
+    //montant total calcul
+    montantTotal = montantTotal + Number(produitEnregistreDansLocalStorage[i].prix);
 
-  /*for (let i = 0; i < produitEnregistreDansLocalStorage.length; i++) {
-       
-        //nom du produit
-       console.log(produitEnregistreDansLocalStorage[i].name);
-       titre = document.createElement("h3");
-       titre.textContent = produitEnregistreDansLocalStorage[i].name;
-        elementsDansPanier.appendChild(titre);
-        
-        //prix total
-        prixTotal = prixTotal + Number(produitEnregistreDansLocalStorage[i].prix);
-        prixTotal = document.createElement("h3");
-        prixTotal.textContent = Number(produitEnregistreDansLocalStorage[i].prix)
-        elementsDansPanier.appendChild(prixTotal);*/
-  console.log(prixTotal);
+    //créer un bouton supprimer sur chaque ligne produit
+    const supprimer = document.getElementById("boutonsupprimer")
+    supprimer.innerHTML += `
+    <button type="submit" class="produit__supprimer">Supprimer</button>
+    `
+  }
+  // affichage calcul du montant total des produits dans le panier
+  const affichageMontant = document.createElement("p");
+  affichageMontant.textContent = montantTotal;
+  recapPanier.appendChild(affichageMontant);
 
-  //supprimer un produit du panier
+  // SI > supprimer un produit du panier
   const bouton = document.getElementById("boutonsupprimer");
+  let produitASupprimer;
   bouton.addEventListener("click", function () {
     if (confirm("Etes-vous sûr de vouloir supprimer cet article ?")) {
-      // Suppression article
+      // Suppression article dans panier 
+      produitEnregistreDansLocalStorage.shift(produitASupprimer); 
+      alert("Votre produit est bien supprimé du panier"); 
+      localStorage.setItem("panier", JSON.stringify(produitEnregistreDansLocalStorage));
+      // Affichage du panier actualisé
     } else {
-      // Article reste dans panier
+      // Article reste dans panier, il ne se passe rien d'autre
     }
   });
 
@@ -58,16 +74,20 @@ else {
     if (confirm("Etes-vous sûr de vouloir vider entièrement votre panier?")) {
       // Tous les produits sont supprimés > message que le panier est vide 
     } else {
-      // Tous les produits restent dans panier 
+      // Tous les produits restent dans panier, il ne se passe rien d'autre
     }
   });
 }
-
-
-
-//sinon
-//Afficher panier (et calculer en meme temps) (prévoir bouton supprimé pour chaque ligne)
-
-//Afficher montant total panier
-//Afficher formulaire commande
 //Bouton pour valider la commande (vérifier formulaire, créer objet contact pour back end, créer tableau avec idproduit pour back end => envoie au back end et attente de réponse => orderID à mettre en storage et afficher page confirmation (changement page)
+
+//gestion au clik sur bouton valider la commande
+    
+  //Créer objet contact pour envoyer au back-end
+  
+  //Créer tableau produits pour envoyer au back-end
+  
+  //Retour du back end > numéro de commande IdOrder
+  
+  //Affichage page confirmation
+
+
