@@ -1,5 +1,13 @@
 /** @format */
 
+.mainaccueil {
+  padding: 20px;
+
+  &__texte {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}  
 #articles {
   display: flex;
   padding: 40px;
@@ -9,6 +17,7 @@
   a {
     text-decoration: none;
     color: black;
+
   }
 }
 
@@ -20,6 +29,11 @@
   border-radius: 10px;
   border-color: black;
   background-color: black;
+  
+  &:hover {
+    border-color:$violet;
+    background-color: white;
+  }
 
   &__name {
     font-size: large;
@@ -27,16 +41,22 @@
     color: $violet;
     text-align: center;
     margin-bottom: 10px;
+    &:hover {
+      color: black;
+    }
   }
 
   &__price {
     text-align: center;
     margin-bottom: 10px;
     color: $violet;
+        &:hover {
+      color: black;
+    }
   }
 
   &__imageUrl {
-    height: 200px;
+    height: 250px;
     width: 100%;
     margin-bottom: 10px;
 
@@ -56,5 +76,8 @@
   .produit {
     width: 100%;
     margin-right: 0px;
+    &__imageUrl {
+      height: 180px;
+    }  
   }
 }

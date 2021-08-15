@@ -1,0 +1,11 @@
+.mainconfirmation{
+  padding: 20px;
+  text-align: center;
+
+  &__texte {
+    text-align: center;
+    h1, h2 {
+          margin-bottom: 20px;
+    }
+  }
+}

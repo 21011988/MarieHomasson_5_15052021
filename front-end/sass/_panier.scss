@@ -5,7 +5,7 @@
   text-align: center;
 
   &__texte {
-    padding-bottom: 20px;
+    margin-bottom: 20px;
     text-align: center;
   }
 
@@ -31,20 +31,92 @@
   }
 }
 
+// MENU TABLEAU PANIER
 .menu {
   display: flex;
   border-color: black;
   border-style: solid;
-  justify-content: space-around;
+  padding: 5px;
   background-color: $violet;
+  align-items: center;
+  .menunomproduit {
+    width: 40%;
+  }
+  .menuprixproduit{
+    width: 27%;
+  }
+
 }
 
-/*.recapitulatifpanier {
+// LISTE PRODUITS PANIERS
+#listeproduits {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}*/
+  flex-wrap: wrap;
+  padding: 5px;
+  align-items: center;
+  margin-bottom: 10px;
 
+  #nomproduit {
+    width: 40%;
+    p {
+      height: 30px;
+    }
+  }
+  #prixproduit {
+    :after{ content:'€'; 
+    }
+    width: 27%;
+    p {
+      height: 30px;
+    }
+  }
+  #boutonsupprimer {
+    display: flex;
+    flex-direction: column;
+    width: 88px;
+    
+    button {
+      background-color: white;
+      color:$violet;
+      border-radius: 10px;
+      padding: 5px;
+      border-color: $violet;
+      height: 30px;
+      &:hover {
+        background-color: black;
+      }
+    }
+  }
+}
+
+// RECAP PANIER MONTANT
+#recapitulatifpanier {
+  display: flex;
+  #montanttotaltexte {
+    width: 40%;
+  }
+  #total {
+    :after{ content:'€'; 
+    }
+    width: 27%;
+  }
+}
+
+.viderpanier {
+  margin-top: 20px;
+  button{
+    background-color: white;
+    color:$violet;
+    border-radius: 10px;
+    padding: 5px;
+    border-color: $violet;
+    &:hover {
+      background-color: black;
+    }
+  }
+}
+
+//FORMULAIRE
 .formulaire {
   margin: 20px 0px 20px 0px;
   padding: 1em;
@@ -74,3 +146,26 @@
     border-color: black;
   }
 }
+
+#boutonformulaire {
+  margin-top: 10px;
+  
+  button {
+    width: 88px;
+    background-color: white;
+    color:$violet;
+    border-radius: 10px;
+    padding: 5px;
+    border-color: $violet;
+    height: 30px;
+    &:hover {
+      background-color: black;
+    }
+  }
+}
+
+
+
+
+
+

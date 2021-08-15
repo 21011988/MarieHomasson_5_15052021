@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /** @format */
 /** @format */
 /* global */
@@ -40,11 +41,12 @@ main {
 }
 .header__navbar {
   background-color: #d1a5ef;
+  margin-top: -5px;
 }
 .header__navbar ul {
   display: flex;
   flex-direction: row;
-  padding: 10px 5px 10px 5px;
+  padding: 10px 5px 10px 20px;
   list-style-type: none;
   margin: 0px;
   justify-content: center;
@@ -59,8 +61,24 @@ main {
   text-decoration: none;
   color: black;
 }
+.header__navbar ul li a:hover {
+  color: white;
+}
 
+@media screen and (min-width: 768px) and (max-width: 1900px) {
+  .header__navbar {
+    font-size: larger;
+  }
+}
 /** @format */
+.mainaccueil {
+  padding: 20px;
+}
+.mainaccueil__texte {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 #articles {
   display: flex;
   padding: 40px;
@@ -81,6 +99,10 @@ main {
   border-color: black;
   background-color: black;
 }
+.produit:hover {
+  border-color: #d1a5ef;
+  background-color: white;
+}
 .produit__name {
   font-size: large;
   font-weight: bold;
@@ -88,13 +110,19 @@ main {
   text-align: center;
   margin-bottom: 10px;
 }
+.produit__name:hover {
+  color: black;
+}
 .produit__price {
   text-align: center;
   margin-bottom: 10px;
   color: #d1a5ef;
 }
+.produit__price:hover {
+  color: black;
+}
 .produit__imageUrl {
-  height: 200px;
+  height: 250px;
   width: 100%;
   margin-bottom: 10px;
 }
@@ -113,6 +141,9 @@ main {
   .produit {
     width: 100%;
     margin-right: 0px;
+  }
+  .produit__imageUrl {
+    height: 180px;
   }
 }
 /**
@@ -155,7 +186,7 @@ main {
   padding: 20px;
 }
 .mainproduit__texte {
-  padding-bottom: 20px;
+  margin-bottom: 20px;
   text-align: center;
 }
 .mainproduit__boutoncmd {
@@ -203,7 +234,7 @@ main {
   text-align: center;
 }
 .mainpanier__texte {
-  padding-bottom: 20px;
+  margin-bottom: 20px;
   text-align: center;
 }
 .mainpanier__boutoncmd {
@@ -230,15 +261,83 @@ main {
   display: flex;
   border-color: black;
   border-style: solid;
-  justify-content: space-around;
+  padding: 5px;
   background-color: #d1a5ef;
+  align-items: center;
+}
+.menu .menunomproduit {
+  width: 40%;
+}
+.menu .menuprixproduit {
+  width: 27%;
 }
 
-/*.recapitulatifpanier {
+#listeproduits {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#listeproduits #nomproduit {
+  width: 40%;
+}
+#listeproduits #nomproduit p {
+  height: 30px;
+}
+#listeproduits #prixproduit {
+  width: 27%;
+}
+#listeproduits #prixproduit :after {
+  content: "€";
+}
+#listeproduits #prixproduit p {
+  height: 30px;
+}
+#listeproduits #boutonsupprimer {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-}*/
+  width: 88px;
+}
+#listeproduits #boutonsupprimer button {
+  background-color: white;
+  color: #d1a5ef;
+  border-radius: 10px;
+  padding: 5px;
+  border-color: #d1a5ef;
+  height: 30px;
+}
+#listeproduits #boutonsupprimer button:hover {
+  background-color: black;
+}
+
+#recapitulatifpanier {
+  display: flex;
+}
+#recapitulatifpanier #montanttotaltexte {
+  width: 40%;
+}
+#recapitulatifpanier #total {
+  width: 27%;
+}
+#recapitulatifpanier #total :after {
+  content: "€";
+}
+
+.viderpanier {
+  margin-top: 20px;
+}
+.viderpanier button {
+  background-color: white;
+  color: #d1a5ef;
+  border-radius: 10px;
+  padding: 5px;
+  border-color: #d1a5ef;
+}
+.viderpanier button:hover {
+  background-color: black;
+}
+
 .formulaire {
   margin: 20px 0px 20px 0px;
   padding: 1em;
@@ -265,6 +364,33 @@ main {
 .formulaire input:hover,
 .formulaire textarea:hover {
   border-color: black;
+}
+
+#boutonformulaire {
+  margin-top: 10px;
+}
+#boutonformulaire button {
+  width: 88px;
+  background-color: white;
+  color: #d1a5ef;
+  border-radius: 10px;
+  padding: 5px;
+  border-color: #d1a5ef;
+  height: 30px;
+}
+#boutonformulaire button:hover {
+  background-color: black;
+}
+
+.mainconfirmation {
+  padding: 20px;
+  text-align: center;
+}
+.mainconfirmation__texte {
+  text-align: center;
+}
+.mainconfirmation__texte h1, .mainconfirmation__texte h2 {
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
