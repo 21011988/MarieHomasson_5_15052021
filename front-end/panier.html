@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mon panier - orinoco</title>
+    <title>Mon panier - Orinoco</title>
     <link rel="stylesheet" href="./style.css" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -31,7 +31,7 @@
       <div class="header__navbar">
         <ul>
           <li><a href="./index.html">Accueil</a></li>
-          <li><a href="./produit.html">Produits</a></li>
+          <li><a href="./produit.html">Produit</a></li>
           <li><a href="./panier.html">Panier</a></li>
           <li>
             <a href="./confirmation.html">Commande</a>
@@ -42,29 +42,29 @@
 
     <main class="mainpanier">
       <div class="mainpanier__texte">
-        <p>Récapitulatif de votre panier</p>
-        <br />
+        <h1>Récapitulatif de votre panier</h1>
       </div>
-
       <div id="monpanier">
         <div class="menu">
-          <p class="nomduproduit">Nom du produit</p>
-          <p class="quantité">Quantité</p>
-          <p class="prix">Prix</p>
-          <button id="boutonsupprimer" type="submit">Supprimer</button>
+          <p class="menunomproduit">Nom du produit</p>
+          <p class="menuprixproduit">Prix</p>
         </div>
-
-        <div id="listeproduits"></div>
-
-        <div class="recapitulatifpanier">
-          <div id="montanttotal">Montant Total</div>
-          <div class="viderpanier">
-            <button id="boutonvider" type="submit">Vider panier</button>
-          </div>
+        <did id="listeproduits">
+          <div id="nomproduit"></div>
+          <div id="prixproduit"></div>
+          <div id="boutonsupprimer"></div>
+        </div>
+        <div id="recapitulatifpanier">
+          <div id="montanttotaltexte">Montant Total</div>
+          <div id="total"></div>
+        </div>
+        <div class="viderpanier">
+          <button id="boutonvider" type="submit">Vider panier</button>
         </div>
 
         <form
           class="formulaire"
+          id="formulaire"
           form="http://localhost:3000/api/teddies"
           method="POST"
         >
@@ -88,7 +88,11 @@
             <label for="email">Email :</label>
             <input type="email" id="email" name="user_Email" />
           </div>
-
+          <div id="boutonformulaire">
+            <button id="boutonformulaire" type="submit">
+              Soumettre
+            </button>
+          </div>
           <div class="mainpanier__boutoncmd">
             <button id="boutonvalider" type="submit">
               Valider la commande
